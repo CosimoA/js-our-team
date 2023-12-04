@@ -8,6 +8,13 @@ MILESTONE 2:
 Stampare le stesse informazioni su DOM sotto forma di stringhe
 */
 
+// VARIABILI PREIMPOSTATE
+const nomeDiv = document.getElementsByClassName("column1");
+const ruoloDiv = document.getElementsByClassName("column2");
+const imgDiv = document.getElementsByClassName("columnL");
+
+
+
 // MILESTONE 0:
 const team = [
     {
@@ -38,8 +45,32 @@ const team = [
 ];
 
 // MILESTONE 1:
-
 for(let element in team){
     console.log(element, team[element]);
 }
 
+// MILESTONE 2:
+
+
+for (let i = 0; i < team.length; i++){
+
+    const cardName =
+    `<div class="card">
+        ${team[i].nome}
+    </div>`
+
+const cardRuolo =
+    `<div class="card">
+        ${team[i].ruolo}
+    </div>`
+
+const cardImg =
+    `<div class="card">
+        ${team[i].immagine}
+    </div>`
+
+    nomeDiv.innerHTML = cardName;
+    ruoloDiv.innerHTML = cardRuolo;
+    imgDiv.innerHTML = cardImg;
+    
+}
