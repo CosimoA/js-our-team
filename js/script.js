@@ -9,9 +9,9 @@ Stampare le stesse informazioni su DOM sotto forma di stringhe
 */
 
 // VARIABILI PREIMPOSTATE
-const nomeDiv = document.getElementsByClassName("column1");
-const ruoloDiv = document.getElementsByClassName("column2");
-const imgDiv = document.getElementsByClassName("columnL");
+const nomeDiv = document.getElementById("column1");
+const ruoloDiv = document.getElementById("column2");
+const imgDiv = document.getElementById("columnL");
 
 
 
@@ -44,6 +44,7 @@ const team = [
     },
 ];
 
+
 // MILESTONE 1:
 for(let element in team){
     console.log(element, team[element]);
@@ -51,26 +52,20 @@ for(let element in team){
 
 // MILESTONE 2:
 
+for (let i = 0; i < team.length; i++) {
 
-for (let i = 0; i < team.length; i++){
+    const nameUser = document.createElement("div");
+    nameUser.classList.add("card");
+    nameUser.innerHTML = team[i].nome;
+    nomeDiv.append(nameUser);
 
-    const cardName =
-    `<div class="card">
-        ${team[i].nome}
-    </div>`
+    const ruoloUser = document.createElement("div");
+    ruoloUser.classList.add("card");
+    ruoloUser.innerHTML = team[i].ruolo;
+    ruoloDiv.append(ruoloUser);
 
-const cardRuolo =
-    `<div class="card">
-        ${team[i].ruolo}
-    </div>`
-
-const cardImg =
-    `<div class="card">
-        ${team[i].immagine}
-    </div>`
-
-    nomeDiv.innerHTML = cardName;
-    ruoloDiv.innerHTML = cardRuolo;
-    imgDiv.innerHTML = cardImg;
-    
+    const imgUser = document.createElement("div");
+    imgUser.classList.add("card");
+    imgUser.innerHTML = team[i].immagine;
+    imgDiv.append(imgUser);
 }
