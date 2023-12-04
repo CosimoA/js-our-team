@@ -38,3 +38,8 @@ const team = [
 ];
 
 // MILESTONE 1:
+
+for(let element in team){
+    console.log(element, team[element]);
+}
+
